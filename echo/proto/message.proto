@@ -1,0 +1,9 @@
+syntax = "proto3";
+option go_package = "echo/proto";
+
+package echo.proto;
+
+message Message {
+  string text = 1;
+}
+

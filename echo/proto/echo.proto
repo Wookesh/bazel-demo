@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "echo/proto";
+
+package echo.proto;
+
+import "echo/proto/message.proto";
+
+message EchoRequest {
+  proto.Message message = 1;
+}
+
+message EchoResponse {
+  proto.Message message = 1;
+}
+
+service Echo {
+  rpc Ping(EchoRequest) returns (EchoResponse);
+}
+
