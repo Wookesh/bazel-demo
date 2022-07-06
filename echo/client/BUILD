@@ -1,5 +1,5 @@
 load("@rules_python//python:defs.bzl", "py_binary")
-load("@django//:requirements.bzl", "requirement")
+load("@django_env//:requirements.bzl", "requirement")
 
 py_binary(
     name = "echo_client",
