@@ -1,5 +1,6 @@
 import lorem
 
+
 def main():
     print(f'hello: {lorem.sentence()}')
 
