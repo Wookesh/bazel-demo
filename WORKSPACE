@@ -65,6 +65,7 @@ go_register_toolchains(
     version = "1.18.3",
 )
 
+# gazelle:repo bazel_gazelle
 bazel_gazelle()
 
 load("@rules_proto_grpc//go:repositories.bzl", rules_proto_grpc_go_repos = "go_repos")
@@ -72,6 +73,10 @@ load("@rules_proto_grpc//go:repositories.bzl", rules_proto_grpc_go_repos = "go_r
 rules_proto_grpc_go_repos()
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("//:deps.bzl", "go_dependencies")
+
+# gazelle:repository_macro deps.bzl%go_dependencies
+go_dependencies()
 
 gazelle_dependencies()
 
