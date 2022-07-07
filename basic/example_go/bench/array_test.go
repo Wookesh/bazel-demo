@@ -17,14 +17,14 @@ func TestT(t *testing.T) {
 }
 
 func preAllocByVar(src []int) {
-	dst := make([]int, len(src), len(src))
+	dst := make([]int, len(src))
 	for i, v := range src {
 		dst[i] = v
 	}
 }
 
 func preAllocByRef(src []int) {
-	dst := make([]int, len(src), len(src))
+	dst := make([]int, len(src))
 	for i := range src {
 		dst[i] = src[i]
 	}
