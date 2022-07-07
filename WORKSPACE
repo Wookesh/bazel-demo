@@ -206,3 +206,10 @@ pip_install(
     python_interpreter_target = interpreter,
     requirements = "//python_envs/django_env:requirements.txt",
 )
+
+pip_install(
+    name = "demo_env",
+    python_interpreter = interpreter,
+    python_interpreter_target = interpreter,
+    requirements = "//python_envs/demo_env:requirements.txt",
+)
