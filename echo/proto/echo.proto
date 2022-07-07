@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "echo/proto";
+option go_package = "github_com_wookesh_bazel_demo/echo/proto";
 
 package echo.proto;
 

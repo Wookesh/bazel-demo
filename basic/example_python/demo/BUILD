@@ -4,5 +4,6 @@ load("@demo_env//:requirements.bzl", "requirement")
 py_binary(
     name = "demo",
     srcs = ["demo.py"],
+    python_version = "PY3",
     deps = [requirement("lorem")],
 )

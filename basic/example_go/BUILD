@@ -9,7 +9,7 @@ go_binary(
 go_library(
     name = "example_go_lib",
     srcs = ["main.go"],
-    importpath = "github.com/wookesh/bazel-demo/basic/example_go",
+    importpath = "github_com_wookesh_bazel_demo/basic/example_go",
     visibility = ["//visibility:private"],
     deps = [
         "//basic/example_go/greeter",

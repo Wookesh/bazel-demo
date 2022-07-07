@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/wookesh/bazel-demo/basic/example_go/greeter"
+	"github_com_wookesh_bazel_demo/basic/example_go/greeter"
 
 	"github.com/sirupsen/logrus"
 )

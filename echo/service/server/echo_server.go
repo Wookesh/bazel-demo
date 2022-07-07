@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/wookesh/bazel-demo/echo/proto"
+	"github_com_wookesh_bazel_demo/echo/proto"
 )
 
 type echoServer struct {

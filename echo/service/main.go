@@ -6,8 +6,8 @@ import (
 	"log"
 	"net"
 
-	"github.com/wookesh/bazel-demo/echo/proto"
-	"github.com/wookesh/bazel-demo/echo/service/server"
+	"github_com_wookesh_bazel_demo/echo/proto"
+	"github_com_wookesh_bazel_demo/echo/service/server"
 
 	"google.golang.org/grpc"
 )

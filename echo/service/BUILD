@@ -32,7 +32,7 @@ go_library(
     importpath = "github.com/wookesh/bazel-demo/echo/service",
     visibility = ["//visibility:private"],
     deps = [
-        "//echo/proto:message_go_proto",
+        "//echo/proto:echo_go_grpc",
         "//echo/service/server",
         "@org_golang_google_grpc//:go_default_library",
     ],
