@@ -1,4 +1,10 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+load(":list_generator.bzl", "list_generator")
+
+go_binary(
+    name = "generator",
+    srcs = ["main.go"],
+)
 
 genrule(
     name = "list",
@@ -8,9 +14,10 @@ genrule(
     tools = [":generator"],
 )
 
-go_binary(
-    name = "generator",
-    srcs = ["main.go"],
+list_generator(
+    name = "simple-list",
+    count = 15,
+    visibility = ["//visibility:public"],
 )
 
 go_binary(
