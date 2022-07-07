@@ -49,4 +49,5 @@ python_grpc_library(
         ":echo_grpc",
         ":message_proto",
     ],
+    visibility = ["//visibility:public"],
 )

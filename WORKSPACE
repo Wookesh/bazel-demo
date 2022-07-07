@@ -6,8 +6,6 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # python (hermetic)
 ########################################
 
-rules_python_version = "740825b7f74930c62f44af95c9a4c1bd428d2c53"  # Latest @ 2021-06-23
-
 http_archive(
     name = "rules_python",
     sha256 = "56dc7569e5dd149e576941bdb67a57e19cd2a7a63cc352b62ac047732008d7e1",
@@ -18,13 +16,13 @@ http_archive(
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 
 python_register_toolchains(
-    name = "python3_10",
+    name = "python3_9",
     # Available versions are listed in @rules_python//python:versions.bzl.
     # We recommend using the same version your team is already standardized on.
-    python_version = "3.10",
+    python_version = "3.9",
 )
 
-load("@python3_10//:defs.bzl", "interpreter")
+load("@python3_9//:defs.bzl", "interpreter")
 
 ########################################
 # rule_proto_grpc
