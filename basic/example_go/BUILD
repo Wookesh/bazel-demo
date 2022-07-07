@@ -11,5 +11,8 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/wookesh/bazel-demo/basic/example_go",
     visibility = ["//visibility:private"],
-    deps = ["@com_github_sirupsen_logrus//:logrus"],
+    deps = [
+        "//basic/example_go/greeter",
+        "@com_github_sirupsen_logrus//:logrus",
+    ],
 )
