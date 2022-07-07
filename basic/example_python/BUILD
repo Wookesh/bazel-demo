@@ -5,7 +5,7 @@ py_binary(
     name = "manage",
     srcs = [":manage.py"],
     deps = [
-        "//hello/example_python/echo_web:project",
+        "//basic/example_python/echo_web:project",
         requirement("django"),
     ],
 )
