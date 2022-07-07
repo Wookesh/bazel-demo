@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: echo-server
-          image: echo-image:latest
+          image: echo_image:latest
           imagePullPolicy: Always
           args:
             - "--port 8000"
