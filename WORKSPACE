@@ -99,7 +99,31 @@ grpc_deps()
 # rule_proto_grpc + nodejs
 ########################################
 
-# TODO: add nodejs
+http_archive(
+    name = "build_bazel_rules_nodejs",
+    sha256 = "ee3280a7f58aa5c1caa45cb9e08cbb8f4d74300848c508374daf37314d5390d6",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/5.5.1/rules_nodejs-5.5.1.tar.gz"],
+)
+
+load("@build_bazel_rules_nodejs//:repositories.bzl", "build_bazel_rules_nodejs_dependencies")
+
+build_bazel_rules_nodejs_dependencies()
+
+load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories")
+
+node_repositories()
+
+load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
+
+yarn_install(
+    name = "npm",
+    package_json = "//npm_envs/global:package.json",
+    yarn_lock = "//npm_envs/global:yarn.lock",
+)
+
+load("@rules_proto_grpc//js:repositories.bzl", rules_proto_grpc_js_repos = "js_repos")
+
+rules_proto_grpc_js_repos()
 
 ########################################
 # docker

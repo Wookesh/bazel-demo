@@ -1,8 +1,7 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@rules_proto_grpc//go:defs.bzl", "go_grpc_library", "go_proto_library")
+load("@rules_proto_grpc//js:defs.bzl", "js_grpc_web_library", "js_proto_compile")
 load("@rules_proto_grpc//python:defs.bzl", "python_grpc_library", "python_proto_library")
-
-#load("@rules_proto_grpc//js:defs.bzl", "js_proto_compile")
 
 proto_library(
     name = "message_proto",
@@ -22,10 +21,10 @@ python_grpc_library(
     visibility = ["//visibility:public"],
 )
 
-#js_proto_compile(
-#    name = "message_js_proto",
-#    protos = [":message_proto"],
-#)
+js_proto_compile(
+    name = "message_js_proto",
+    protos = [":message_proto"],
+)
 
 proto_library(
     name = "echo_grpc",
@@ -45,6 +44,15 @@ go_grpc_library(
 
 python_grpc_library(
     name = "echo_python_grpc",
+    protos = [
+        ":echo_grpc",
+        ":message_proto",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+js_grpc_web_library(
+    name = "echo_js_grpc",
     protos = [
         ":echo_grpc",
         ":message_proto",
