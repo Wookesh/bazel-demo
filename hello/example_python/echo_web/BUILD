@@ -4,7 +4,7 @@ load("@django_env//:requirements.bzl", "requirement")
 py_library(
     name = "project",
     srcs = glob(["*.py"]),  # all python files in directory
-    visibility = ["//echo/client/web:__pkg__"],
+    visibility = ["//hello/example_python:__pkg__"],
     deps = [
         requirement("django"),
     ],
