@@ -10,7 +10,7 @@ proto_library(
 
 go_proto_library(
     name = "message_go_proto",
-    importpath = "echo/proto",
+    importpath = "github.com/wookesh/bazel-demo/echo/proto",
     protos = [":message_proto"],
     visibility = ["//visibility:public"],
 )
@@ -35,7 +35,7 @@ proto_library(
 
 go_grpc_library(
     name = "echo_go_grpc",
-    importpath = "echo/proto",
+    importpath = "github.com/wookesh/bazel-demo/echo/proto",
     protos = [
         ":echo_grpc",
         ":message_proto",

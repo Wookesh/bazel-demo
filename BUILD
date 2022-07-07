@@ -1,9 +1,10 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github_com_wookesh_bazel_demo
+# gazelle:prefix github.com/wookesh/bazel-demo
+# gazelle:go_generate_proto false
+# gazelle:proto disable
 gazelle(name = "gazelle")
 
-# gazelle:prefix github_com_wookesh_bazel_demo
 gazelle(
     name = "gazelle-update-repos",
     args = [
