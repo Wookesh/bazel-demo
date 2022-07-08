@@ -15,5 +15,9 @@ func NewGreeter(who string) *Greeter {
 }
 
 func (g *Greeter) Greet() string {
-	return fmt.Sprintf("hello %v", g.who)
+	who := g.who
+	if g.who == "" {
+		who = "world"
+	}
+	return fmt.Sprintf("hello %v", who)
 }

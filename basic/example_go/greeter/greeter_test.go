@@ -12,11 +12,19 @@ func TestGreeter_Greet(t *testing.T) {
 		want   string
 	}{
 		{
-			name: "world success",
+			name: "user success",
 			fields: fields{
-				who: "world",
+				who: "user",
 			},
-			want: "hello world",
+			want: "hello user",
+		},
+		{
+			// TODO: fix
+			name: "empty success",
+			fields: fields{
+				who: "",
+			},
+			want: "hello ",
 		},
 	}
 	for _, tt := range tests {
@@ -25,7 +33,7 @@ func TestGreeter_Greet(t *testing.T) {
 				who: tt.fields.who,
 			}
 			if got := g.Greet(); got != tt.want {
-				t.Errorf("Greet() = %v, want %v", got, tt.want)
+				t.Errorf("Greet() returned: '%v', want: '%v'", got, tt.want)
 			}
 		})
 	}
