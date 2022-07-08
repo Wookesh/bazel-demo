@@ -11,7 +11,7 @@ func init() {
 }
 
 func TestFlaky(t *testing.T) {
-	x := rand.Intn(3)
+	x := rand.Intn(6)
 	if x > 1 {
 		t.Fail()
 	}
